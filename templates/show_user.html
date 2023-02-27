@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+<body>
+    <h1> User </h1>
+    User id: {{ id }}
+    <br>
+    User name: {{ name }}
+    <br>
+    face_img_path: {{ face_img_path }}
+    <br>
+    <img src="data:image/jpeg;base64,{{ user_img | safe }}">
+    <br>
+</body>
+</html>

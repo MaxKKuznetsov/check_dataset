@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event</title>
+</head>
+<body>
+    <style type="text/css">
+        .flexbox {
+        display: -ms-flex;
+        display: -webkit-flex;
+        display: flex;
+        width: 100%;
+        }
+
+        .left {
+            min-width: 500px;
+            flex-grow: 0;
+            }
+
+        .right {
+            flex-grow: 1;
+        }
+    </style>
+
+    <h1> Event </h1>
+    <br>
+    <br>
+    <div class="flexbox">
+        <div class="left">
+            event index: {{ event_index }}
+            <br>
+            event id: {{ event_id }};
+            <br>
+            <img src="data:image/jpeg;base64,{{ event_img | safe }}">
+            <br>
+            <!--face_img_path: {{ face_img_path }}-->
+
+        </div>
+        <div class="right">
+            identified user id: {{ identified_user_id }}
+            <br>
+            identified user name: {{ identified_user_name }}
+            <br>
+            <img src="data:image/jpeg;base64,{{ user_img | safe }}">
+            <br>
+            <!--user_img_path: {{ user_img_path }}-->
+
+        </div>
+    </div>
+    <br>
+    <div class="flexbox">
+        <div class="right">
+            <form action="{{ '/ok' }}">
+                <button> OK </button>
+            </form>
+        </div>
+        <div class="left">
+            <form action="{{ '/error' }}">
+                <button> ERROR </button>
+            </form>
+        </div>
+    </div>
+    <br>
+    <div class="flexbox">
+        <div class="right">
+            <form action="{{ '/update/poor_brightness' }}">
+                <button> poor brightness </button>
+            </form>
+            <br>
+            <form action="{{ '/update/poor_contrast' }}">
+                <button> poor contrast </button>
+            </form>
+            <br>
+            <form action="{{ '/update/poor_focus' }}">
+                <button> poor_focus </button>
+            </form>
+            <br>
+            <form action="{{ '/update/poor_angle' }}">
+                <button> poor_angle </button>
+            </form>
+        </div>
+        <div class="left">
+            <form action="{{ '/update/spoofing' }}">
+                <button> spoofing </button>
+            </form>
+        </div>
+    </div>
+
+    <br>
+    <div class="flexbox">
+        <div class="right">
+            <form action="{{ '/back' }}">
+                <button> BACK and SAVE </button>
+            </form>
+        </div>
+        <div class="left">
+            <form action="{{ '/next' }}">
+                <button> NEXT and SAVE </button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
